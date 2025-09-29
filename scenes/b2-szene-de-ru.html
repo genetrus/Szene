@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <title>Szene B2 – Deutsch &amp; Russisch</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --page-width: 210mm;
+      --page-height: 297mm;
+      --page-margin: 22mm;
+      --font-family: "Source Serif Pro", "Georgia", serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #f4f4f4;
+      font-family: var(--font-family);
+      color: #1f1f1f;
+      line-height: 1.5;
+      font-size: 12pt;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin: 0 auto 15px;
+      max-width: var(--page-width);
+    }
+
+    button {
+      padding: 8px 16px;
+      font-size: 11pt;
+      border: 1px solid #444;
+      background: #fff;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    button:hover,
+    button:focus {
+      background: #444;
+      color: #fff;
+      outline: none;
+    }
+
+    .page {
+      width: var(--page-width);
+      min-height: var(--page-height);
+      margin: 0 auto 20px;
+      padding: var(--page-margin);
+      background: #fff;
+      box-shadow: 0 2mm 6mm rgba(0, 0, 0, 0.15);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    h1 {
+      font-size: 20pt;
+      margin-top: 0;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    h2 {
+      font-size: 14pt;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .dialogue {
+      display: grid;
+      gap: 8px;
+    }
+
+    .dialogue p {
+      margin: 0;
+      text-align: justify;
+    }
+
+    .footer-note {
+      margin-top: 24px;
+      font-size: 10pt;
+      color: #555;
+      text-align: right;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
+      }
+
+      .controls {
+        display: none;
+      }
+
+      .page {
+        box-shadow: none;
+        margin: 0;
+        min-height: auto;
+        page-break-after: always;
+      }
+
+      .page:last-of-type {
+        page-break-after: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="controls">
+    <button type="button" id="print-btn">Drucken</button>
+    <button type="button" id="pdf-btn">Als PDF</button>
+  </div>
+
+  <section class="page" aria-labelledby="page1-title">
+    <div>
+      <h1 id="page1-title">Projektbesprechung im Innovationszentrum</h1>
+      <h2>Seite 1 · Deutscher Dialog (Niveau B2)</h2>
+      <div class="dialogue">
+        <p><strong>Laura:</strong> Danke, dass ihr so kurzfristig Zeit gefunden habt. Der Investor möchte schon nächste Woche wissen, wie wir die Pilotphase verlängern können.</p>
+        <p><strong>Mateo:</strong> Ich habe die Nutzungsdaten der letzten drei Monate analysiert. Die aktive Zeit pro Nutzer ist gestiegen, aber wir haben noch zu viele Abbrüche im Onboarding.</p>
+        <p><strong>Jana:</strong> Das deckt sich mit dem Feedback aus dem Kundendienst. Viele verstehen nicht, warum sie ihre Gesundheitsdaten gleich zu Beginn freigeben sollen.</p>
+        <p><strong>Laura:</strong> Können wir die Freigabe optional machen, ohne dass unsere Empfehlungen zu ungenau werden?</p>
+        <p><strong>Mateo:</strong> Ja, wenn wir eine gestufte Einwilligung anbieten. Dann erklären wir in drei Schritten, welche Vorteile jede Datenfreigabe bringt.</p>
+        <p><strong>Jana:</strong> Dafür brauche ich klare Formulierungen, die juristisch wasserdicht sind. Könntest du, Laura, das mit unserer Datenschutzbeauftragten abstimmen?</p>
+        <p><strong>Laura:</strong> Mache ich. Außerdem will der Investor einen sichtbaren Fortschritt beim Nachhaltigkeitsbericht. Wo stehen wir da?</p>
+        <p><strong>Mateo:</strong> Die CO₂-Bilanz für unsere Server ist fertig. Wir kompensieren bereits sechzig Prozent, aber die restlichen Zertifikate sind teuer.</p>
+        <p><strong>Jana:</strong> Vielleicht können wir den Betrieb der Testserver nachts pausieren. Das senkt den Verbrauch und zeigt, dass wir aktiv optimieren.</p>
+        <p><strong>Laura:</strong> Gute Idee. Bitte bereitet bis Freitag eine kurze Präsentation vor: neue Onboarding-Stufen, Kommunikationsplan und eine Folie zum Energiemanagement.</p>
+        <p><strong>Mateo:</strong> Ich übernehme die Kennzahlen und mache Screenshots aus dem Analyse-Dashboard.</p>
+        <p><strong>Jana:</strong> Und ich formuliere die Kundenkommunikation, inklusive einer FAQ. Schickt ihr mir bis morgen eure Stichpunkte?</p>
+        <p><strong>Laura:</strong> Klar. Wenn wir das ordentlich abstimmen, wirkt unsere Roadmap viel überzeugender.</p>
+        <p><strong>Mateo:</strong> Dann legen wir los. Ich schicke euch heute Abend die ersten Diagramme.</p>
+        <p><strong>Jana:</strong> Super, ich blocke mir den Donnerstagvormittag für die Überarbeitung.</p>
+        <p><strong>Laura:</strong> Perfekt. Danke euch, wir sind auf einem guten Weg!</p>
+      </div>
+    </div>
+    <p class="footer-note">Vorbereitet am 29. September 2025 · Interne Abstimmung</p>
+  </section>
+
+  <section class="page" aria-labelledby="page2-title">
+    <div>
+      <h1 id="page2-title">Обсуждение проекта в центре инноваций</h1>
+      <h2>Страница 2 · Полный перевод на русский язык</h2>
+      <div class="dialogue">
+        <p><strong>Лаура:</strong> Спасибо, что смогли собраться так срочно. Инвестор уже на следующей неделе хочет знать, как мы продлим пилотную фазу.</p>
+        <p><strong>Матео:</strong> Я проанализировал показатели за последние три месяца. Активное время на пользователя выросло, но у нас всё ещё слишком много отказов на этапе регистрации.</p>
+        <p><strong>Яна:</strong> Это совпадает с отзывами из клиентской службы. Многие не понимают, почему им сразу нужно открывать доступ к своим медицинским данным.</p>
+        <p><strong>Лаура:</strong> Мы можем сделать раскрытие данных необязательным, чтобы рекомендации не потеряли точность?</p>
+        <p><strong>Матео:</strong> Да, если предложим ступенчатое согласие. Мы объясним в трёх шагах, какие преимущества даёт каждое предоставление данных.</p>
+        <p><strong>Яна:</strong> Для этого мне нужны чёткие формулировки, юридически безупречные. Лаура, можешь согласовать это с нашим специалистом по защите данных?</p>
+        <p><strong>Лаура:</strong> Сделаю. К тому же инвестор хочет увидеть заметный прогресс в отчёте по устойчивости. На каком мы этапе?</p>
+        <p><strong>Матео:</strong> Баланс выбросов CO₂ по нашим серверам готов. Мы уже компенсируем шестьдесят процентов, но оставшиеся сертификаты дорогие.</p>
+        <p><strong>Яна:</strong> Возможно, мы можем ночью останавливать тестовые серверы. Это снизит потребление и покажет, что мы активно оптимизируем.</p>
+        <p><strong>Лаура:</strong> Отличная идея. Подготовьте к пятнице короткую презентацию: новые этапы регистрации, план коммуникации и один слайд по энергоменеджменту.</p>
+        <p><strong>Матео:</strong> Я возьму на себя показатели и сделаю скриншоты из аналитической панели.</p>
+        <p><strong>Яна:</strong> А я сформулирую клиентскую коммуникацию, включая раздел вопросов и ответов. Пришлёте мне свои тезисы до завтра?</p>
+        <p><strong>Лаура:</strong> Конечно. Если мы всё согласуем, дорожная карта будет выглядеть гораздо убедительнее.</p>
+        <p><strong>Матео:</strong> Тогда за дело. Я сегодня вечером пришлю первые диаграммы.</p>
+        <p><strong>Яна:</strong> Отлично, я забронирую для доработки четверг до обеда.</p>
+        <p><strong>Лаура:</strong> Прекрасно. Спасибо, мы на верном пути!</p>
+      </div>
+    </div>
+    <p class="footer-note">Перевод подготовлен 29 сентября 2025 · Внутреннее согласование</p>
+  </section>
+
+  <script>
+    function openPrintDialog() {
+      window.print();
+    }
+
+    document.getElementById('print-btn').addEventListener('click', openPrintDialog);
+    document.getElementById('pdf-btn').addEventListener('click', openPrintDialog);
+  </script>
+</body>
+</html>
