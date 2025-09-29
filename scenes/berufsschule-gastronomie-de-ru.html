@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="utf-8" />
-  <title>Berufsschule Gastronomie – Einseitige Szene (A4)</title>
+  <title>«Berufsschule Gastronomie — Einseitige Szene (A4)»</title>
   <style>
     :root {
       color-scheme: light;
@@ -50,7 +50,7 @@
 
     button {
       border: 1px solid var(--blue2);
-      background: white;
+      background: #ffffff;
       color: var(--blue2);
       padding: 8px 18px;
       font-size: 11pt;
@@ -62,14 +62,14 @@
     button:hover,
     button:focus {
       background: var(--blue2);
-      color: white;
+      color: #ffffff;
       outline: none;
     }
 
     .page {
       width: 210mm;
       height: 297mm;
-      background: white;
+      background: #ffffff;
       box-shadow: 0 3mm 8mm rgba(59, 130, 246, 0.18);
       padding: 18mm 20mm 18mm 22mm;
       display: flex;
@@ -107,7 +107,7 @@
 
     .context {
       font-style: italic;
-      font-size: 10.6pt;
+      font-size: 10.7pt;
       text-align: center;
       color: #364d6b;
     }
@@ -116,20 +116,21 @@
       display: flex;
       justify-content: center;
       gap: 10px;
-      font-size: 10.4pt;
+      font-size: 10.6pt;
       color: #2f3d57;
     }
 
     .keywords span {
-      background: rgba(96, 165, 250, 0.18);
-      padding: 3px 8px;
-      border-radius: 999px;
+      padding: 2px 10px;
+      border-radius: 12px;
+      background: rgba(96, 165, 250, 0.22);
     }
 
     .dialogue {
-      display: grid;
-      gap: 8px;
-      font-size: 10.6pt;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 10.7pt;
       line-height: 1.23;
       hyphens: auto;
       overflow-wrap: anywhere;
@@ -137,45 +138,54 @@
 
     .line {
       display: grid;
-      grid-template-columns: 105px 1fr;
-      gap: 10px;
-      align-items: baseline;
+      grid-template-columns: 28mm 1fr;
+      column-gap: 10px;
+      align-items: start;
     }
 
     .who {
       font-variant: small-caps;
-      color: var(--blue2);
-      letter-spacing: 0.4px;
+      font-weight: 600;
+      font-size: 10.4pt;
+      color: #1f2a44;
     }
 
     .de,
     .ru {
-      text-align: justify;
+      margin: 0;
+      font-size: 10.7pt;
     }
 
     .rule {
       height: 1px;
-      background: rgba(17, 17, 17, 0.14);
-      margin: 6px 0 2px;
+      background: linear-gradient(90deg, rgba(59, 130, 246, 0.4), rgba(59, 130, 246, 0));
+      margin: 4px 0;
+    }
+
+    .task,
+    .footnote {
+      font-size: 10.4pt;
+      color: #2f3d57;
+      margin: 0;
     }
 
     .task {
-      margin-top: auto;
-      padding-top: 8px;
-      border-top: 1px dashed rgba(201, 162, 39, 0.6);
-      font-size: 10.4pt;
-      color: #2f3d57;
+      margin-top: 6px;
+      padding: 10px 12px;
+      border-left: 3px solid var(--gold);
+      background: rgba(201, 162, 39, 0.08);
     }
 
     .footnote {
-      font-size: 10pt;
-      color: #5a6c8a;
       text-align: right;
+      margin-top: auto;
+      color: #4b5670;
+      font-style: italic;
     }
 
     @media print {
       body {
-        background: white;
+        background: none;
         padding: 0;
       }
 
@@ -184,169 +194,151 @@
       }
 
       .page {
+        margin: 0 auto;
         box-shadow: none;
-        margin: 0;
       }
     }
   </style>
 </head>
 <body>
-  <div class="toolbar" aria-label="Werkzeuge">
-    <button type="button" id="print-btn">Drucken</button>
-    <button type="button" id="pdf-btn">Als PDF</button>
+  <div class="toolbar" role="toolbar" aria-label="Werkzeuge">
+    <button id="print-btn" type="button">Drucken</button>
+    <button id="pdf-btn" type="button">Als PDF</button>
   </div>
 
   <section class="page" aria-labelledby="page-de-title">
     <header>
-      <h1 id="page-de-title">Berufsschultag im Ausbildungscampus</h1>
-      <p class="sub">Seite 1 · Deutscher Dialog</p>
+      <h1 id="page-de-title">Tag der offenen Küche an der Berufsschule</h1>
+      <p class="sub">Seite 1 · Deutsch · Niveau B2</p>
       <div class="orn" aria-hidden="true"></div>
     </header>
-    <p class="context">Lehrküche der Gewerblichen Berufsschule Augsburg, später Vormittag während einer Projektbesprechung.</p>
-    <p class="keywords" aria-label="Schlüsselwörter">
-      <span>Ausbildungsplan</span>
+    <p class="context">Lehrküche der Berufsschule für Gastronomie in Köln, Vormittag vor dem Tag der offenen Tür.</p>
+    <p class="keywords" aria-label="Schlüsselbegriffe">
+      <span>Ausbildungsordnung</span>
       <span>Praxisstation</span>
       <span>Gästebetreuung</span>
-      <span>Meisterprüfung</span>
+      <span>Hygienekonzept</span>
     </p>
     <div class="dialogue">
       <div class="line">
         <span class="who">Herr König</span>
-        <p class="de">Zur Erinnerung: Unsere Berufsschule bietet vielfältige Ausbildungen an, besonders für Gastronomieberufe, und euer Kurs zeigt heute, wie praxisnah das sein kann.</p>
-      </div>
-      <div class="line">
-        <span class="who">Herr König</span>
-        <p class="de">Schön, dass alle da sind. Wir müssen heute klären, wie wir die Servicepraxis mit der neuen Lehrküche verzahnen.</p>
+        <p class="de">Zur Erinnerung: Berufsschulen bieten zum Beispiel Ausbildung für Gastronomieberufe an – und heute wollen wir zeigen, wie praxisnah unser Lehrplan ist.</p>
       </div>
       <div class="line">
         <span class="who">Maya</span>
-        <p class="de">Im Restaurantpraktikum fehlt uns noch eine Station für vegetarische Menüs. Viele Gäste fragen danach.</p>
+        <p class="de">Die Besucher sollen sehen, dass wir die neuen Küchengeräte bedienen können. Ich koordiniere die Station für vegetarische Menüs.</p>
       </div>
       <div class="line">
         <span class="who">Leon</span>
-        <p class="de">Ich könnte mit meiner Gruppe einen Wochenplan schreiben, der saisonale Produkte einbindet. Dann wissen alle, was eingekauft werden muss.</p>
+        <p class="de">Ich erkläre der Presse, wie wir Service und Küche verbinden. Dafür brauche ich noch zwei Freiwillige, die eine kurze Gästesituation spielen.</p>
       </div>
       <div class="line">
-        <span class="who">Herr König</span>
-        <p class="de">Gute Idee. Bitte achtet darauf, dass die Lagerhaltung mitdenkt, was die Bäckerei-Abteilung liefert.</p>
+        <span class="who">Sabine</span>
+        <p class="de">Dann nehme ich das Gästebuch mit an die Empfangstheke und sammle Feedback. Vielleicht entsteht daraus unser nächstes Projekt.</p>
       </div>
       <div class="rule" role="separator"></div>
       <div class="line">
-        <span class="who">Sabine</span>
-        <p class="de">Im Gästebereich üben wir gerade das Beschwerdemanagement. Können wir die echten Rückmeldungen aus dem Schulrestaurant auswerten?</p>
-      </div>
-      <div class="line">
         <span class="who">Herr König</span>
-        <p class="de">Ja, ich lasse euch die Protokolle aus den letzten zwei Wochen kopieren. Achtet besonders auf den Tonfall, nicht nur auf die Inhalte.</p>
+        <p class="de">Vergesst nicht, das Hygienekonzept auszuhängen. Die Kammer achtet darauf, dass Desinfektionsmittel und Allergentabellen sichtbar sind.</p>
       </div>
       <div class="line">
         <span class="who">Maya</span>
-        <p class="de">Dann könnten wir auch eine kleine Feedbackkarte gestalten, damit wir standardisierte Fragen haben.</p>
+        <p class="de">Ich drucke gleich die Allergenliste und markiere die regionalen Zutaten. Das zeigt, dass wir nachhaltig planen.</p>
       </div>
       <div class="line">
         <span class="who">Leon</span>
-        <p class="de">Und wir spielen das Szenario durch, dass eine Allergikerin spontan auftaucht. So trainieren wir die Kommunikation zwischen Küche und Service.</p>
+        <p class="de">Wir sollten auch erwähnen, dass die Ausbildung dual ist. Viele Eltern fragen, wie der Wechsel zwischen Betrieb und Schule funktioniert.</p>
       </div>
-      <div class="rule" role="separator"></div>
       <div class="line">
         <span class="who">Sabine</span>
-        <p class="de">Wie verbinden wir das Ganze mit der Vorbereitung auf die Meisterprüfung? Ich habe Respekt vor der Kalkulation.</p>
+        <p class="de">Ich habe eine Grafik vorbereitet, die unsere Praxisstationen erklärt: Barista, Bankett und Front Office. Soll ich sie am Eingang platzieren?</p>
       </div>
       <div class="line">
         <span class="who">Herr König</span>
-        <p class="de">Wir richten nächste Woche eine Praxisstation ein, in der ihr die Wareneinsätze kalkuliert und digitale Tools vergleicht.</p>
+        <p class="de">Sehr gut, und bitte erwähnt, dass wir Vorbereitungskurse für die Meisterprüfung anbieten. Das ist ein starkes Argument.</p>
       </div>
       <div class="line">
         <span class="who">Maya</span>
-        <p class="de">Super, dann bringe ich meine Tabellen aus dem Betrieb mit. Die zeigen, wie viel Spielraum wir bei den Getränken haben.</p>
+        <p class="de">Können wir nach der Führung eine kleine Kostprobe servieren? Ein saisonales Süppchen würde die Gäste überzeugen.</p>
       </div>
       <div class="line">
         <span class="who">Leon</span>
-        <p class="de">Ich frage in meinem Ausbildungsbetrieb nach, ob wir die aktuelle Inventurliste als Beispiel bekommen dürfen.</p>
+        <p class="de">Nur wenn wir genug Zeit für den Abwasch einplanen. Ich organisiere eine Schichtliste, damit niemand hängen bleibt.</p>
       </div>
       <div class="line">
         <span class="who">Herr König</span>
-        <p class="de">Sehr gut. Wenn ihr eure Erkenntnisse zusammentragt, können wir das Konzept nächste Woche im Schulleitungsteam präsentieren.</p>
+        <p class="de">Einverstanden. Wir treffen uns um zwölf zur Generalprobe und checken jede Station noch einmal durch.</p>
       </div>
     </div>
-    <p class="task"><strong>Mini-Aufgabe:</strong> Notiere zwei Formulierungen für einen höflichen Umgang mit Reklamationen und übersetze sie ins Englische.</p>
-    <p class="footnote">Protokolliert am 12. März · Ausbildungsjahr Gastronomie (3. Lehrjahr)</p>
+    <p class="task"><strong>Mini-Aufgabe:</strong> Formuliere in drei Sätzen, wie du einem Gast die duale Ausbildung und ihre Vorteile erklären würdest.</p>
+    <p class="footnote">Notizen der Klasse G21 · Vorbereitung Tag der offenen Küche</p>
   </section>
 
   <section class="page" aria-labelledby="page-ru-title">
     <header>
-      <h1 id="page-ru-title">День в профессиональном училище гастрономии</h1>
-      <p class="sub">Страница 2 · Полный перевод на русский язык</p>
+      <h1 id="page-ru-title">День открытых дверей в профессиональной школе</h1>
+      <p class="sub">Страница 2 · Русский перевод</p>
       <div class="orn" aria-hidden="true"></div>
     </header>
-    <p class="context">Учебная кухня профессионального училища Аугсбурга, позднее утро, обсуждение проекта.</p>
+    <p class="context">Учебная кухня профессионального училища гастрономии в Кёльне, утро перед днём открытых дверей.</p>
     <p class="keywords" aria-label="Ключевые термины">
       <span>Учебный план</span>
       <span>Практическая станция</span>
-      <span>Обслуживание гостей</span>
-      <span>Мастерский экзамен</span>
+      <span>Работа с гостями</span>
+      <span>Гигиенический план</span>
     </p>
     <div class="dialogue">
       <div class="line">
         <span class="who">Господин Кёниг</span>
-        <p class="ru">Напомню: наше профессиональное училище предлагает разные программы, особенно по гастрономическим специальностям, и ваш курс сегодня прекрасно показывает, насколько практика здесь жива.</p>
-      </div>
-      <div class="line">
-        <span class="who">Господин Кёниг</span>
-        <p class="ru">Рад, что все пришли. Сегодня нам нужно решить, как связать практику обслуживания с новой учебной кухней.</p>
+        <p class="ru">Напоминаю: профессиональные училища, например, готовят к гастрономическим профессиям, и сегодня мы хотим показать, насколько практичен наш учебный план.</p>
       </div>
       <div class="line">
         <span class="who">Майя</span>
-        <p class="ru">Во время практики в ресторане нам всё ещё не хватает станции для вегетарианских меню. Многие гости об этом просят.</p>
+        <p class="ru">Посетители должны увидеть, что мы умеем работать с новым оборудованием. Я координирую станцию для вегетарианских меню.</p>
       </div>
       <div class="line">
         <span class="who">Леон</span>
-        <p class="ru">Я мог бы со своей группой составить недельный план с сезонными продуктами. Тогда всем будет ясно, что нужно закупать.</p>
+        <p class="ru">Я объясню прессе, как мы связываем сервис и кухню. Для этого мне нужны два добровольца, чтобы разыграть короткую ситуацию с гостями.</p>
       </div>
       <div class="line">
-        <span class="who">Господин Кёниг</span>
-        <p class="ru">Хорошая мысль. Пожалуйста, учитывайте складской учёт и поставки из пекарского отделения.</p>
+        <span class="who">Сабине</span>
+        <p class="ru">Тогда я возьму гостевую книгу к стойке регистрации и соберу отзывы. Возможно, из этого вырастет наш следующий проект.</p>
       </div>
       <div class="rule" role="separator"></div>
       <div class="line">
-        <span class="who">Сабине</span>
-        <p class="ru">На занятиях с гостями мы как раз отрабатываем работу с жалобами. Можно ли разобрать реальные отзывы из школьного ресторана?</p>
-      </div>
-      <div class="line">
         <span class="who">Господин Кёниг</span>
-        <p class="ru">Да, я дам вам копии протоколов за последние две недели. Обращайте внимание прежде всего на тон, а не только на содержание.</p>
+        <p class="ru">Не забудьте повесить гигиенический план. Палата следит, чтобы дезинфекция и таблицы аллергенов были на видном месте.</p>
       </div>
       <div class="line">
         <span class="who">Майя</span>
-        <p class="ru">Тогда мы могли бы сделать небольшую карточку обратной связи, чтобы задавать стандартные вопросы.</p>
+        <p class="ru">Я сейчас распечатаю перечень аллергенов и отмечу региональные продукты. Это покажет, что мы планируем устойчиво.</p>
       </div>
       <div class="line">
         <span class="who">Леон</span>
-        <p class="ru">И разыграем ситуацию, когда внезапно приходит гость с аллергией. Так потренируем взаимодействие кухни и сервиса.</p>
+        <p class="ru">Нужно также рассказать, что обучение дуальное. Многие родители спрашивают, как чередуются предприятие и школа.</p>
       </div>
-      <div class="rule" role="separator"></div>
       <div class="line">
         <span class="who">Сабине</span>
-        <p class="ru">Как связать всё это с подготовкой к мастерскому экзамену? Я опасаюсь расчётов.</p>
+        <p class="ru">Я подготовила схему, которая объясняет наши практические станции: бариста, банкет и ресепшен. Разместить её у входа?</p>
       </div>
       <div class="line">
         <span class="who">Господин Кёниг</span>
-        <p class="ru">На следующей неделе откроем практическую станцию, где вы будете считать затраты на продукты и сравнивать цифровые инструменты.</p>
+        <p class="ru">Отлично, и, пожалуйста, упомяните, что мы проводим подготовительные курсы к мастерскому экзамену. Это сильный аргумент.</p>
       </div>
       <div class="line">
         <span class="who">Майя</span>
-        <p class="ru">Отлично, тогда я принесу таблицы из своего предприятия. Там видно, какой запас у нас по напиткам.</p>
+        <p class="ru">Можно после экскурсии подать небольшую дегустацию? Сезонный супчик впечатлит гостей.</p>
       </div>
       <div class="line">
         <span class="who">Леон</span>
-        <p class="ru">Я спрошу на своей практике, можно ли взять актуальный инвентаризационный список в качестве примера.</p>
+        <p class="ru">Только если заранее запланируем время на мойку посуды. Я составлю график смен, чтобы никто не остался один.</p>
       </div>
       <div class="line">
         <span class="who">Господин Кёниг</span>
-        <p class="ru">Прекрасно. Когда соберёте выводы, представим концепцию на следующей неделе руководству школы.</p>
+        <p class="ru">Договорились. В двенадцать встречаемся на генеральную репетицию и ещё раз проверяем каждую станцию.</p>
       </div>
     </div>
-    <p class="footnote">Перевод составлен 12 марта · Учебный курс гастрономии (3-й год)</p>
+    <p class="footnote">Перевод подготовлен группой G21 · Подготовка дня открытых дверей</p>
   </section>
 
   <script>
