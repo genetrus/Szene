@@ -38,6 +38,9 @@
 ### Пример HTML-каркаса
 Этот шаблон следует дополнить реальным контентом и стилизацией под конкретную сцену.
 
+### Готовый пример
+- Полностью сверстанную сцену можно посмотреть в файле [`scenes/uni-berufsschule-de-ru.html`](scenes/uni-berufsschule-de-ru.html).
+
 <pre><code>&lt;div class="toolbar"&gt;
   &lt;button class="btn print"&gt;Drucken&lt;/button&gt;
   &lt;button class="btn pdf"&gt;Als PDF&lt;/button&gt;

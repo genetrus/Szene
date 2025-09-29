@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Uni &amp; Berufsschule — Einseitige Szene</title>
+<style>
+  :root{ --blue:#60a5fa; --blue2:#3b82f6; --gold:#c9a227; --ink:#111; }
+  html,body{ margin:0; padding:0; background:#fff; }
+  body{ font-family: Georgia, "Times New Roman", serif; color:var(--ink); -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .page{ box-sizing:border-box; width:210mm; height:297mm; padding:12mm; margin:0 auto; }
+  header{ margin-bottom:4mm; }
+  h1{ margin:0 0 2mm 0; font-size:18pt; line-height:1.12; color:var(--blue); letter-spacing:.2px; }
+  .sub{ font-size:10.2pt; color:#333; margin-bottom:4mm; }
+  .orn{ height:2mm; background:linear-gradient(90deg,var(--gold),transparent); border-radius:2mm; margin-bottom:4mm; }
+  .stage{ display:grid; grid-template-columns: 5mm auto; gap:2.5mm; margin-bottom:4mm; }
+  .stage::before{ content:""; display:block; background:var(--gold); border-radius:2mm; }
+  .stage p{ margin:0; font-size:10.6pt; line-height:1.24; hyphens:auto; -webkit-hyphens:auto; }
+  .line{ margin:0 0 3mm 0; }
+  .who{ font-variant:small-caps; color:var(--blue2); letter-spacing:.5px; font-size:11pt; }
+  .de, .ru{ margin:.6mm 0 0 0; font-size:10.8pt; line-height:1.24; hyphens:auto; -webkit-hyphens:auto; overflow-wrap:anywhere; }
+  .rule{ height:1.6mm; background:linear-gradient(90deg,var(--gold),transparent); border-radius:1.2mm; margin:3.2mm 0; }
+  .foot{ font-size:9.2pt; color:#555; margin-top:1.6mm; }
+  .toolbar{ position:fixed; right:14px; top:14px; display:flex; gap:8px; z-index:999; }
+  .btn{ border:1px solid var(--blue); color:var(--blue); background:#fff; padding:6px 10px; border-radius:14px; cursor:pointer; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; font-size:12px; box-shadow:0 2px 8px rgba(0,0,0,.08); }
+  .btn:hover{ background:#f7faff; }
+  .btn-alt{ border-color:var(--gold); color:var(--gold); }
+  @media print{ .toolbar{ display:none; } }
+  @page{ size:A4; margin:12mm; }
+</style>
+</head>
+<body>
+<div class="toolbar"><button class="btn" id="printBtn" type="button" aria-label="Drucken">Drucken</button><button class="btn btn-alt" id="pdfBtn" type="button" aria-label="Als PDF öffnen">Als PDF</button></div>
+
+<!-- Seite 1: Deutsch -->
+<div class="page">
+  <header>
+    <h1>Wege nach der Schule: Uni &amp; Berufsschule</h1>
+    <div class="sub">Einseitige Szene (B2). Leitsatz: „Weiterführende Bildung wird von Universitäten und Berufsschulen angeboten.“</div>
+    <div class="orn"></div>
+  </header>
+
+  <section class="stage">
+    <p><strong>Ort:</strong> Schul‑Aula bei der „Zukunftsmesse“. Zwei Stände: „Universität“ mit Flyern und „Berufsschule/Duale Ausbildung“ mit Werkzeugkoffer und Arbeitshelm. Ein Gong kündigt das nächste Gespräch an.</p>
+  </section>
+
+  <div class="line"><div class="who">Timo (Schüler)</div><div class="de">Weiterführende Bildung wird von Universitäten und Berufsschulen angeboten. Aber wie entscheide ich mich?</div></div>
+  <div class="line"><div class="who">Frau Berger (Beratung)</div><div class="de">Drei Fragen: <em>Willst du mehr Theorie?</em> → Uni. <em>Mehr Praxis und Gehalt ab Tag 1?</em> → duale Ausbildung mit Berufsschule. <em>Oder erst Orientierung?</em> → FSJ/Praktikum, dann Entscheidung.</div></div>
+  <div class="line"><div class="who">Mira (Uni – Informatik)</div><div class="de">Uni heißt: Vorlesungen, Seminare, eigene Projekte. Abschlüsse: Bachelor (3–4 J.), Master (1–2 J.). Viel Selbstorganisation.</div></div>
+  <div class="line"><div class="who">Lena (Azubi – Mechatronik)</div><div class="de">Duale Ausbildung: Betrieb + Berufsschule. Rhythmus z.B. 3 Tage Betrieb/2 Schule. Abschluss über Kammerprüfung, danach Übernahmechancen.</div></div>
+  <div class="line"><div class="who">Timo</div><div class="de">Und wenn ich später von Ausbildung zu Studium wechseln will?</div></div>
+  <div class="line"><div class="who">Frau Berger</div><div class="de">Geht oft: mit Berufserfahrung/Fachhochschulreife an FH/Uni, teils mit Anrechnung. Umgekehrt auch: nach Bachelor in den Betrieb plus berufsbegleitende Schule.</div></div>
+
+  <div class="rule"></div>
+
+  <div class="line"><div class="who">Mira</div><div class="de">Finanzen: BAföG, Nebenjob, Stipendien. Viel Freiheit, aber Eigenverantwortung.</div></div>
+  <div class="line"><div class="who">Lena</div><div class="de">In der Ausbildung gibt es Ausbildungsvergütung, aber festen Tagesablauf und Berufsschultests.</div></div>
+  <div class="line"><div class="who">Frau Berger</div><div class="de">Mini‑Aufgabe: Markiere im Dreieck <em>Theorie – Praxis – Sicherheit</em> deinen Punkt. Schreibe drei Sätze: Warum dort? Was fehlt? Was wäre der erste Schritt (Bewerbung/Infotag)?</div></div>
+  <div class="line"><div class="who">Chor (leise)</div><div class="de">Gleiche Zukunft—verschiedene Wege. Wichtig ist, dass der Weg zu dir passt.</div></div>
+
+  <div class="foot">Hinweis: Umfang und Satz sind für eine A4‑Seite optimiert. Für Farbdruck ggf. „Hintergrundgrafiken“ aktivieren.</div>
+</div>
+
+<!-- Seite 2: Russisch -->
+<div class="page">
+  <header>
+    <h1>Пути после школы: университет и профшкола</h1>
+    <div class="sub">Одностраничная сцена (B2). Лейтфраза: «Дальнейшее образование предлагают университеты и профессиональные училища (беруфшуле).»</div>
+    <div class="orn"></div>
+  </header>
+
+  <section class="stage">
+    <p><strong>Место:</strong> школьная «ярмарка будущего». Два стенда: «Университет» (флаеры) и «Дуальное обучение/профшкола» (ящик с инструментами, каска). Гонг — к следующей беседе.</p>
+  </section>
+
+  <div class="line"><div class="who">Тимо (ученик)</div><div class="ru">Дальнейшее образование предлагают университеты и профшколы. Но как выбрать?</div></div>
+  <div class="line"><div class="who">Госпожа Бергер (консультант)</div><div class="ru">Три вопроса: <em>Больше теории?</em> — университет. <em>Больше практики и зарплата с первого дня?</em> — дуальное обучение с профшколой. <em>Нужна ориентация?</em> — волонтёрский год/стажировка, затем выбор.</div></div>
+  <div class="line"><div class="who">Мира (университет — информатика)</div><div class="ru">Университет: лекции, семинары, проекты. Степени: бакалавр (3–4 года), магистр (1–2). Много самоорганизации.</div></div>
+  <div class="line"><div class="who">Лена (ученица‑стажёр, мехатроника)</div><div class="ru">Дуальное обучение: предприятие + профшкола. Ритм, например, 3 дня на работе/2 в школе. Итог — экзамен в палате, часто шанс остаться в компании.</div></div>
+  <div class="line"><div class="who">Тимо</div><div class="ru">А если потом хочу перейти из обучения в вуз?</div></div>
+  <div class="line"><div class="who">Госпожа Бергер</div><div class="ru">Часто можно: с опытом/аттестатом ФОС — в прикладной/обычный вуз, иногда засчитают предметы. И наоборот: после бакалавра — в компанию и вечерняя школа.</div></div>
+
+  <div class="rule"></div>
+
+  <div class="line"><div class="who">Мира</div><div class="ru">Финансы: Бафёг, подработка, стипендии. Много свободы, но и ответственности.</div></div>
+  <div class="line"><div class="who">Лена</div><div class="ru">В обучении есть зарплата ученика и чёткий распорядок, плюс контрольные в профшколе.</div></div>
+  <div class="line"><div class="who">Госпожа Бергер</div><div class="ru">Мини‑задание: отметь на треугольнике <em>теория — практика — стабильность</em> свою точку. Напиши три предложения: почему там? чего не хватает? какой первый шаг (заявка/инфодень)?</div></div>
+  <div class="line"><div class="who">Хор (тихо)</div><div class="ru">Будущее общее — пути разные. Важно, чтобы путь подходил тебе.</div></div>
+
+  <div class="foot">Примечание: объём и набор оптимизированы под одну A4. Для цветной печати включите фоны.</div>
+</div>
+
+<script>
+// Печать без всплывающих окон: прямой вызов + тихий iframe‑резерв
+(function(){
+  function startPrint(){
+    try { window.focus(); window.print(); return; } catch(e) {}
+    try {
+      var iframe = document.createElement('iframe');
+      iframe.style.position='fixed'; iframe.style.right='0'; iframe.style.bottom='0';
+      iframe.style.width='1px'; iframe.style.height='1px'; iframe.style.opacity='0';
+      iframe.setAttribute('aria-hidden','true');
+      document.body.appendChild(iframe);
+      var doc = iframe.contentDocument || iframe.contentWindow.document;
+      var htmlEl = document.documentElement.cloneNode(true);
+      Array.from(htmlEl.querySelectorAll('script')).forEach(function(s){ s.remove(); });
+      doc.open(); doc.write('<!DOCTYPE html>' + htmlEl.outerHTML); doc.close();
+      iframe.onload = function(){ try { iframe.contentWindow.focus(); iframe.contentWindow.print(); } catch(e){} setTimeout(function(){ try { document.body.removeChild(iframe); } catch(e) {} }, 3000); };
+    } catch(e) {}
+  }
+  document.addEventListener('DOMContentLoaded', function(){
+    var printBtn = document.getElementById('printBtn');
+    var pdfBtn = document.getElementById('pdfBtn');
+    if (printBtn) printBtn.addEventListener('click', function(ev){ ev.preventDefault(); startPrint(); });
+    if (pdfBtn) pdfBtn.addEventListener('click', function(ev){ ev.preventDefault(); startPrint(); });
+  });
+})();
+</script>
+</body>
+</html>
