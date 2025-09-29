@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <title>Kurze Szene – Universität &amp; Abschluss</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --page-width: 210mm;
+      --page-height: 297mm;
+      --page-margin: 22mm;
+      --font-family: "Source Serif Pro", "Georgia", serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #f8f8f8;
+      font-family: var(--font-family);
+      color: #222;
+      line-height: 1.6;
+      font-size: 12pt;
+    }
+
+    .page {
+      width: var(--page-width);
+      min-height: var(--page-height);
+      margin: 0 auto 20px;
+      padding: var(--page-margin);
+      background: #fff;
+      box-shadow: 0 2mm 6mm rgba(0, 0, 0, 0.12);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    h1 {
+      font-size: 20pt;
+      text-align: center;
+      margin: 0;
+      letter-spacing: 0.5px;
+    }
+
+    h2 {
+      font-size: 14pt;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 0;
+      text-align: center;
+    }
+
+    p {
+      margin: 0;
+      text-align: center;
+    }
+
+    .translation {
+      display: grid;
+      gap: 10px;
+    }
+
+    .note {
+      font-size: 10pt;
+      text-align: right;
+      color: #555;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
+      }
+
+      .page {
+        box-shadow: none;
+        margin: 0;
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="page" aria-labelledby="page-title">
+    <div class="translation">
+      <h1 id="page-title">Kurze Szene: Studienweg</h1>
+      <h2>Deutsch · Russisch</h2>
+      <p><em>Sie ist zur Universität gegangen; sie hat einen Abschluss in Philosophie.</em></p>
+      <p>Она поступила в университет; у неё диплом по философии.</p>
+    </div>
+    <p class="note">Notiert am 18. Februar 2026</p>
+  </section>
+</body>
+</html>

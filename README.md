@@ -4,6 +4,7 @@ Kurze Übersicht über druckfertige Sprachszenen.
 
 ## Scenes
 - [B2 Szene (Deutsch &amp; Russisch)](scenes/b2-szene-de-ru.html)
+- [Kurze Szene: Studienweg (Deutsch &amp; Russisch)](scenes/kurzszene-universitaet-de-ru.html)
 
 ## Инструкция для нового диалога
 
