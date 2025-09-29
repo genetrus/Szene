@@ -2,14 +2,18 @@
 <html lang="de">
 <head>
   <meta charset="utf-8" />
-  <title>Kurze Szene – Universität &amp; Abschluss</title>
+  <title>Kurze Szene – Universität & Abschluss</title>
   <style>
     :root {
       color-scheme: light;
       --page-width: 210mm;
       --page-height: 297mm;
-      --page-margin: 22mm;
+      --page-margin: 18mm;
       --font-family: "Source Serif Pro", "Georgia", serif;
+      --header-blue: #6fa8dc;
+      --accent-gold: #d9a441;
+      --speaker-blue: #1e4f79;
+      --background-gray: #f2f4f8;
     }
 
     * {
@@ -18,56 +22,136 @@
 
     body {
       margin: 0;
-      padding: 20px;
-      background: #f8f8f8;
+      padding: 24px;
+      background: var(--background-gray);
       font-family: var(--font-family);
-      color: #222;
-      line-height: 1.6;
-      font-size: 12pt;
+      color: #1f1f1f;
+      line-height: 1.5;
+      font-size: 11.5pt;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      margin: 0 auto 18px;
+      max-width: var(--page-width);
+    }
+
+    button {
+      padding: 8px 18px;
+      font-size: 11pt;
+      border: 1px solid var(--speaker-blue);
+      color: var(--speaker-blue);
+      background: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    button:hover,
+    button:focus {
+      background: var(--speaker-blue);
+      color: #fff;
+      outline: none;
     }
 
     .page {
       width: var(--page-width);
       min-height: var(--page-height);
-      margin: 0 auto 20px;
+      margin: 0 auto 22px;
       padding: var(--page-margin);
       background: #fff;
       box-shadow: 0 2mm 6mm rgba(0, 0, 0, 0.12);
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      gap: 18px;
+      gap: 16px;
+      position: relative;
+    }
+
+    .page::before {
+      content: "";
+      position: absolute;
+      top: var(--page-margin);
+      bottom: var(--page-margin);
+      left: 12px;
+      width: 6px;
+      background: var(--accent-gold);
+      border-radius: 3px;
+    }
+
+    header {
+      text-align: center;
+      padding-bottom: 6px;
+      border-bottom: 3px solid var(--accent-gold);
     }
 
     h1 {
-      font-size: 20pt;
-      text-align: center;
       margin: 0;
-      letter-spacing: 0.5px;
+      font-size: 22pt;
+      letter-spacing: 0.6px;
+      color: var(--header-blue);
     }
 
     h2 {
-      font-size: 14pt;
-      text-transform: uppercase;
+      margin: 6px 0 0;
+      font-size: 13pt;
       letter-spacing: 1px;
-      margin: 0;
-      text-align: center;
+      text-transform: uppercase;
+      color: #3a3a3a;
     }
 
-    p {
-      margin: 0;
-      text-align: center;
+    .lead {
+      font-style: italic;
+      color: #555;
     }
 
-    .translation {
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr minmax(160px, 190px);
+      gap: 18px;
+      flex: 1 1 auto;
+    }
+
+    .dialogue {
       display: grid;
       gap: 10px;
     }
 
-    .note {
-      font-size: 10pt;
+    .line {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 12px;
+    }
+
+    .speaker {
+      font-variant: small-caps;
+      color: var(--speaker-blue);
+      letter-spacing: 0.5px;
+    }
+
+    .aside {
+      border-left: 4px solid var(--accent-gold);
+      padding-left: 14px;
+      background: rgba(217, 164, 65, 0.08);
+      display: grid;
+      gap: 10px;
+      align-content: flex-start;
+      font-size: 10.5pt;
+      color: #444;
+    }
+
+    .aside strong {
+      font-variant: small-caps;
+      color: var(--speaker-blue);
+    }
+
+    .footer-note {
       text-align: right;
-      color: #555;
+      font-size: 10pt;
+      color: #606060;
+      border-top: 1px solid rgba(31, 31, 31, 0.1);
+      padding-top: 8px;
     }
 
     @media print {
@@ -76,23 +160,186 @@
         padding: 0;
       }
 
+      .controls {
+        display: none;
+      }
+
       .page {
         box-shadow: none;
         margin: 0;
-        min-height: auto;
+        border-radius: 0;
+        page-break-after: always;
+      }
+
+      .page:last-of-type {
+        page-break-after: auto;
       }
     }
   </style>
 </head>
 <body>
-  <section class="page" aria-labelledby="page-title">
-    <div class="translation">
-      <h1 id="page-title">Kurze Szene: Studienweg</h1>
-      <h2>Deutsch · Russisch</h2>
-      <p><em>Sie ist zur Universität gegangen; sie hat einen Abschluss in Philosophie.</em></p>
-      <p>Она поступила в университет; у неё диплом по философии.</p>
+  <div class="controls">
+    <button type="button" id="print-btn">Drucken</button>
+    <button type="button" id="pdf-btn">Als PDF</button>
+  </div>
+
+  <section class="page" aria-labelledby="page1-title">
+    <header>
+      <h1 id="page1-title">Ein später Campusbesuch</h1>
+      <h2>Seite 1 · Deutscher Dialog (Niveau B2)</h2>
+      <p class="lead">Sie ist zur Universität gegangen; sie hat einen Abschluss in Philosophie.</p>
+    </header>
+    <div class="layout">
+      <div class="dialogue" aria-label="Dialog auf Deutsch">
+        <div class="line">
+          <span class="speaker">Mara</span>
+          <span>Es fühlt sich seltsam an, wieder hier zu sein. Die Mensa riecht noch genauso wie vor fünf Jahren.</span>
+        </div>
+        <div class="line">
+          <span class="speaker">Jonas</span>
+          <span>Kein Wunder, du hast hier fast gewohnt. Ich hätte nie gedacht, dass du noch einmal freiwillig in diese Vorlesung gehst.</span>
+        </div>
+        <div class="line">
+          <span class="speaker">Mara</span>
+          <span>Eigentlich wollte ich der Professorin danken. Ohne ihr Seminar hätte ich mein Philosophie-Examen nicht so gut bestanden.</span>
+        </div>
+        <div class="line">
+          <span class="speaker">Jonas</span>
+          <span>Stimmt, du hast damals jede Nacht über Kant und Hannah Arendt referiert. Und jetzt arbeitest du im Kulturbüro.</span>
+        </div>
+        <div class="line">
+          <span class="speaker">Mara</span>
+          <span>Ja, aber genau deshalb bin ich zurück. Wir planen eine Reihe zu kritischem Denken, und ich möchte Studierende dafür gewinnen.</span>
+        </div>
+        <div class="line">
+          <span class="speaker">Jonas</span>
+          <span>Also wird aus dem nostalgischen Besuch gleich Netzwerkarbeit. Klingt nach der Mara, die ich kenne.</span>
+        </div>
+        <div class="line">
+          <span class="speaker">Mara</span>
+          <span>Schon möglich. Aber ich möchte auch zeigen, dass ein geisteswissenschaftlicher Abschluss kein Umweg war.</span>
+        </div>
+        <div class="line">
+          <span class="speaker">Jonas</span>
+          <span>Du hast doch längst bewiesen, dass du analytisch denken kannst. Deine Ausstellungen sind präziser kuratiert als manch technisches Projekt.</span>
+        </div>
+        <div class="line">
+          <span class="speaker">Mara</span>
+          <span>Danke. Trotzdem bekomme ich ständig Fragen, ob Philosophie "praktisch" sei. Vielleicht überzeugt ein praxisnaher Workshop mehr als jede Erklärung.</span>
+        </div>
+        <div class="line">
+          <span class="speaker">Jonas</span>
+          <span>Dann lass uns nach der Vorlesung mit der Professorin sprechen. Sie kennt die motivierten Leute besser als jede Statistik.</span>
+        </div>
+        <div class="line">
+          <span class="speaker">Mara</span>
+          <span>Gute Idee. Und wenn wir nebenbei ein altes Lieblingscafé wiederentdecken, beschwere ich mich auch nicht.</span>
+        </div>
+        <div class="line">
+          <span class="speaker">Jonas</span>
+          <span>Abgemacht. Ich lade dich auf den legendären Kardamom-Kuchen ein, damit du weißt, dass dein Abschluss auch kulinarische Vorteile hat.</span>
+        </div>
+      </div>
+      <aside class="aside" aria-label="Hinweise und Kontext">
+        <p><strong>Ort:</strong> Universitätscampus, philosophische Fakultät.</p>
+        <p><strong>Situation:</strong> Mara kehrt als Absolventin zurück, um neue Projekte vorzustellen.</p>
+        <p><strong>Fokus:</strong> Transfer geisteswissenschaftlicher Kompetenzen in praktische Kulturarbeit.</p>
+      </aside>
     </div>
-    <p class="note">Notiert am 18. Februar 2026</p>
+    <p class="footer-note">Notiert am 18. Februar 2026 · Wiedersehen an der Alma Mater</p>
   </section>
+
+  <section class="page" aria-labelledby="page2-title">
+    <header>
+      <h1 id="page2-title">Поздний визит на кампус</h1>
+      <h2>Страница 2 · Полный перевод на русский язык</h2>
+      <p class="lead">Она поступила в университет; у неё диплом по философии.</p>
+    </header>
+    <div class="layout">
+      <div class="dialogue" aria-label="Диалог на русском языке">
+        <div class="line">
+          <span class="speaker">Мара</span>
+          <span>Странно снова здесь оказаться. В столовой всё ещё тот же запах, что и пять лет назад.</span>
+        </div>
+        <div class="line">
+          <span class="speaker">Йонас</span>
+          <span>Неудивительно, ты же тут почти жила. Я бы не подумал, что ты добровольно пойдёшь ещё раз на эту лекцию.</span>
+        </div>
+        <div class="line">
+          <span class="speaker">Мара</span>
+          <span>На самом деле я хотела поблагодарить преподавательницу. Без её семинара я бы не сдала философский экзамен так успешно.</span>
+        </div>
+        <div class="line">
+          <span class="speaker">Йонас</span>
+          <span>Верно, ты же каждую ночь рассказывала о Канте и Ханне Арендт. А теперь работаешь в культурном бюро.</span>
+        </div>
+        <div class="line">
+          <span class="speaker">Мара</span>
+          <span>Да, но именно поэтому я вернулась. Мы готовим цикл о критическом мышлении, и я хочу привлечь студентов.</span>
+        </div>
+        <div class="line">
+          <span class="speaker">Йонас</span>
+          <span>То есть из ностальгического визита сразу получается нетворкинг. Похоже на ту Мару, которую я знаю.</span>
+        </div>
+        <div class="line">
+          <span class="speaker">Мара</span>
+          <span>Возможно. Но мне также важно показать, что гуманитарный диплом не был обходным путём.</span>
+        </div>
+        <div class="line">
+          <span class="speaker">Йонас</span>
+          <span>Ты уже давно доказала, что умеешь аналитически мыслить. Твои выставки курируются точнее, чем некоторые технические проекты.</span>
+        </div>
+        <div class="line">
+          <span class="speaker">Мара</span>
+          <span>Спасибо. И всё же меня постоянно спрашивают, «практична» ли философия. Возможно, практический воркшоп убедит лучше любых объяснений.</span>
+        </div>
+        <div class="line">
+          <span class="speaker">Йонас</span>
+          <span>Тогда поговорим после лекции с преподавательницей. Она знает мотивированных ребят лучше любой статистики.</span>
+        </div>
+        <div class="line">
+          <span class="speaker">Мара</span>
+          <span>Отличная мысль. И если мы заодно найдём наше старое любимое кафе, я тоже не возражаю.</span>
+        </div>
+        <div class="line">
+          <span class="speaker">Йонас</span>
+          <span>Договорились. Я угощу тебя легендарным кардамоновым пирогом, чтобы ты помнила: твой диплом приносит и гастрономические бонусы.</span>
+        </div>
+      </div>
+      <aside class="aside" aria-label="Примечания и контекст">
+        <p><strong>Место:</strong> Университетский кампус, философский факультет.</p>
+        <p><strong>Ситуация:</strong> Мара возвращается как выпускница, чтобы представить новые проекты.</p>
+        <p><strong>Акцент:</strong> Применение гуманитарных навыков в практической культурной работе.</p>
+      </aside>
+    </div>
+    <p class="footer-note">Записано 18 февраля 2026 года · Встреча с альма-матер</p>
+  </section>
+
+  <iframe id="pdf-frame" title="PDF Fallback" style="display: none;" aria-hidden="true"></iframe>
+  <script>
+    const printBtn = document.getElementById("print-btn");
+    const pdfBtn = document.getElementById("pdf-btn");
+    const pdfFrame = document.getElementById("pdf-frame");
+
+    printBtn.addEventListener("click", () => {
+      window.print();
+    });
+
+    pdfBtn.addEventListener("click", () => {
+      const blob = new Blob([document.documentElement.outerHTML], {
+        type: "text/html"
+      });
+      const url = URL.createObjectURL(blob);
+      pdfFrame.src = url;
+      pdfFrame.onload = () => {
+        try {
+          pdfFrame.contentWindow.focus();
+          pdfFrame.contentWindow.print();
+        } catch (error) {
+          window.print();
+        }
+      };
+    });
+  </script>
 </body>
 </html>
