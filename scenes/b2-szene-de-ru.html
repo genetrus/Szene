@@ -2,111 +2,195 @@
 <html lang="de">
 <head>
   <meta charset="utf-8" />
-  <title>Szene B2 – Deutsch &amp; Russisch</title>
+  <title>Pilotphase Nachhaltigkeit — Einseitige Szene (A4)</title>
   <style>
     :root {
-      color-scheme: light;
-      --page-width: 210mm;
-      --page-height: 297mm;
-      --page-margin: 22mm;
-      --font-family: "Source Serif Pro", "Georgia", serif;
+      --blue: #60a5fa;
+      --blue2: #3b82f6;
+      --gold: #c9a227;
+      --ink: #111111;
     }
 
     * {
       box-sizing: border-box;
     }
 
-    body {
-      margin: 0;
-      padding: 20px;
-      background: #f4f4f4;
-      font-family: var(--font-family);
-      color: #1f1f1f;
-      line-height: 1.5;
-      font-size: 12pt;
+    @page {
+      size: A4;
+      margin: 12mm;
     }
 
-    .controls {
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Georgia", "Times New Roman", serif;
+      font-size: 10.7pt;
+      line-height: 1.23;
+      background: #f4f7fb;
+      color: var(--ink);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      padding: 18px 0 36px;
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
       display: flex;
       justify-content: flex-end;
       gap: 10px;
-      margin: 0 auto 15px;
-      max-width: var(--page-width);
+      width: 210mm;
+      padding: 8px 0;
+      background: transparent;
+      z-index: 5;
     }
 
-    button {
-      padding: 8px 16px;
-      font-size: 11pt;
-      border: 1px solid #444;
-      background: #fff;
-      cursor: pointer;
-      transition: background 0.2s ease, color 0.2s ease;
-    }
-
-    button:hover,
-    button:focus {
-      background: #444;
+    .toolbar button {
+      border: 1px solid var(--blue2);
+      background: var(--blue);
       color: #fff;
+      font-size: 10.2pt;
+      padding: 6px 14px;
+      border-radius: 4px;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .toolbar button:hover,
+    .toolbar button:focus {
+      background: var(--blue2);
       outline: none;
+      transform: translateY(-1px);
     }
 
     .page {
-      width: var(--page-width);
-      min-height: var(--page-height);
-      margin: 0 auto 20px;
-      padding: var(--page-margin);
-      background: #fff;
-      box-shadow: 0 2mm 6mm rgba(0, 0, 0, 0.15);
+      position: relative;
+      width: 210mm;
+      height: 297mm;
+      padding: 16mm 18mm 18mm;
+      background: #ffffff;
+      box-shadow: 0 4mm 12mm rgba(17, 17, 17, 0.18);
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    .head {
+      text-align: center;
+      margin-bottom: 10mm;
     }
 
     h1 {
-      font-size: 20pt;
-      margin-top: 0;
-      text-align: center;
-      letter-spacing: 0.5px;
+      margin: 0;
+      font-size: 18pt;
+      letter-spacing: 0.6px;
     }
 
-    h2 {
-      font-size: 14pt;
+    .sub {
+      margin-top: 4px;
+      font-size: 11.6pt;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 12px;
+      color: var(--blue2);
+    }
+
+    .orn {
+      width: 38mm;
+      height: 2.2mm;
+      margin: 8px auto 0;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .context {
+      font-size: 10.4pt;
+      margin-bottom: 6mm;
+      color: rgba(17, 17, 17, 0.82);
+      text-align: center;
+    }
+
+    .keywords {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 4.5mm;
+      font-variant: small-caps;
+      letter-spacing: 0.6px;
+      color: var(--gold);
+    }
+
+    .rule {
+      width: 100%;
+      height: 0.4mm;
+      background: linear-gradient(90deg, transparent 0%, var(--blue2) 20%, var(--blue2) 80%, transparent 100%);
+      margin: 4.5mm 0;
     }
 
     .dialogue {
       display: grid;
-      gap: 8px;
+      gap: 3.6mm;
+      flex: 1 1 auto;
     }
 
-    .dialogue p {
+    .line {
+      display: grid;
+      grid-template-columns: 24mm 1fr;
+      column-gap: 4mm;
+      align-items: baseline;
+    }
+
+    .who {
+      font-variant: small-caps;
+      color: var(--blue2);
+      letter-spacing: 0.8px;
+    }
+
+    .de,
+    .ru {
       margin: 0;
       text-align: justify;
+      hyphens: auto;
+      overflow-wrap: anywhere;
+    }
+
+    .task {
+      margin-top: 6mm;
+      padding: 4mm;
+      border: 0.4mm solid var(--gold);
+      border-radius: 3mm;
+      background: rgba(201, 162, 39, 0.08);
+      font-style: italic;
     }
 
     .footer-note {
-      margin-top: 24px;
-      font-size: 10pt;
-      color: #555;
+      margin-top: 5mm;
       text-align: right;
+      font-size: 9.8pt;
+      color: rgba(17, 17, 17, 0.68);
     }
 
     @media print {
       body {
-        background: #fff;
+        background: #ffffff;
         padding: 0;
       }
 
-      .controls {
+      .toolbar {
         display: none;
       }
 
       .page {
-        box-shadow: none;
         margin: 0;
-        min-height: auto;
+        box-shadow: none;
         page-break-after: always;
       }
 
@@ -117,70 +201,198 @@
   </style>
 </head>
 <body>
-  <div class="controls">
+  <div class="toolbar" role="toolbar" aria-label="Druckoptionen">
     <button type="button" id="print-btn">Drucken</button>
     <button type="button" id="pdf-btn">Als PDF</button>
   </div>
 
   <section class="page" aria-labelledby="page1-title">
-    <div>
-      <h1 id="page1-title">Projektbesprechung im Innovationszentrum</h1>
-      <h2>Seite 1 · Deutscher Dialog (Niveau B2)</h2>
-      <div class="dialogue">
-        <p><strong>Laura:</strong> Danke, dass ihr so kurzfristig Zeit gefunden habt. Der Investor möchte schon nächste Woche wissen, wie wir die Pilotphase verlängern können.</p>
-        <p><strong>Mateo:</strong> Ich habe die Nutzungsdaten der letzten drei Monate analysiert. Die aktive Zeit pro Nutzer ist gestiegen, aber wir haben noch zu viele Abbrüche im Onboarding.</p>
-        <p><strong>Jana:</strong> Das deckt sich mit dem Feedback aus dem Kundendienst. Viele verstehen nicht, warum sie ihre Gesundheitsdaten gleich zu Beginn freigeben sollen.</p>
-        <p><strong>Laura:</strong> Können wir die Freigabe optional machen, ohne dass unsere Empfehlungen zu ungenau werden?</p>
-        <p><strong>Mateo:</strong> Ja, wenn wir eine gestufte Einwilligung anbieten. Dann erklären wir in drei Schritten, welche Vorteile jede Datenfreigabe bringt.</p>
-        <p><strong>Jana:</strong> Dafür brauche ich klare Formulierungen, die juristisch wasserdicht sind. Könntest du, Laura, das mit unserer Datenschutzbeauftragten abstimmen?</p>
-        <p><strong>Laura:</strong> Mache ich. Außerdem will der Investor einen sichtbaren Fortschritt beim Nachhaltigkeitsbericht. Wo stehen wir da?</p>
-        <p><strong>Mateo:</strong> Die CO₂-Bilanz für unsere Server ist fertig. Wir kompensieren bereits sechzig Prozent, aber die restlichen Zertifikate sind teuer.</p>
-        <p><strong>Jana:</strong> Vielleicht können wir den Betrieb der Testserver nachts pausieren. Das senkt den Verbrauch und zeigt, dass wir aktiv optimieren.</p>
-        <p><strong>Laura:</strong> Gute Idee. Bitte bereitet bis Freitag eine kurze Präsentation vor: neue Onboarding-Stufen, Kommunikationsplan und eine Folie zum Energiemanagement.</p>
-        <p><strong>Mateo:</strong> Ich übernehme die Kennzahlen und mache Screenshots aus dem Analyse-Dashboard.</p>
-        <p><strong>Jana:</strong> Und ich formuliere die Kundenkommunikation, inklusive einer FAQ. Schickt ihr mir bis morgen eure Stichpunkte?</p>
-        <p><strong>Laura:</strong> Klar. Wenn wir das ordentlich abstimmen, wirkt unsere Roadmap viel überzeugender.</p>
-        <p><strong>Mateo:</strong> Dann legen wir los. Ich schicke euch heute Abend die ersten Diagramme.</p>
-        <p><strong>Jana:</strong> Super, ich blocke mir den Donnerstagvormittag für die Überarbeitung.</p>
-        <p><strong>Laura:</strong> Perfekt. Danke euch, wir sind auf einem guten Weg!</p>
+    <header class="head">
+      <h1 id="page1-title">Pilotphase Nachhaltigkeit</h1>
+      <p class="sub">Seite 1 · Deutscher Dialog (Niveau B2)</p>
+      <div class="orn" aria-hidden="true"></div>
+    </header>
+    <p class="context">Ort: Besprechungsraum im Innovationszentrum, später Nachmittag.</p>
+    <p class="keywords">Onboarding · Nachhaltigkeitsbericht · Datenfreigabe · Energiemanagement</p>
+    <div class="dialogue">
+      <div class="line">
+        <span class="who">Laura</span>
+        <p class="de">Danke, dass ihr so kurzfristig hier seid. Der Investor erwartet bis Montag einen Plan, wie wir die Pilotphase verlängern und gleichzeitig glaubwürdig nachhaltiger auftreten.</p>
+      </div>
+      <div class="line">
+        <span class="who">Mateo</span>
+        <p class="de">Ich habe die Nutzungsdaten geclustert: Die aktiven Minuten pro Nutzer steigen stetig, aber das Onboarding verliert jede dritte Person nach dem zweiten Hinweis zur Datenfreigabe.</p>
+      </div>
+      <div class="line">
+        <span class="who">Jana</span>
+        <p class="de">Unser Support hört genau das. Viele verstehen den Mehrwert nicht und brechen ab, bevor sie überhaupt die ersten personalisierten Tipps sehen.</p>
+      </div>
+      <div class="line">
+        <span class="who">Laura</span>
+        <p class="de">Können wir die Einwilligung staffeln? Mir schwebt ein System vor, in dem die Nutzenden Schritt für Schritt entscheiden, welche Gesundheitsdaten sie teilen.</p>
+      </div>
+      <div class="line">
+        <span class="who">Mateo</span>
+        <p class="de">Ja. Drei Stufen mit klaren Beispielen: Basisdaten für allgemeine Empfehlungen, Bewegungssensoren für Trainingspläne und optionale Schlafanalyse für Tiefenfeedback.</p>
+      </div>
+      <div class="line">
+        <span class="who">Jana</span>
+        <p class="de">Dann brauche ich konkrete Formulierungen plus einen Hinweis auf Datenschutz-Audits. Sonst bekommen wir die FAQ nicht konsistent.</p>
+      </div>
+      <div class="rule" aria-hidden="true"></div>
+      <div class="line">
+        <span class="who">Laura</span>
+        <p class="de">Ich spreche morgen mit unserer Datenschutzbeauftragten und sichere die juristische Seite. Was können wir dem Investor in Sachen Nachhaltigkeit vorlegen?</p>
+      </div>
+      <div class="line">
+        <span class="who">Mateo</span>
+        <p class="de">Die CO₂-Bilanz ist fertig. Wir kompensieren sechzig Prozent über lokale Projekte. Die restlichen Zertifikate würden unser Budget sprengen, aber wir können den Serverbetrieb nachts drosseln.</p>
+      </div>
+      <div class="line">
+        <span class="who">Jana</span>
+        <p class="de">Wenn wir den Testcluster nach Mitternacht herunterfahren, sparen wir Energie und zeigen Initiative. Ich kann das kommunikativ als „Smart Energy Mode“ verkaufen.</p>
+      </div>
+      <div class="line">
+        <span class="who">Laura</span>
+        <p class="de">Perfekt. Bitte bereitet bis Freitag ein kompakt visuelles Update vor: gestuftes Onboarding, Kommunikationsplan, Kennzahlen zur Energieeinsparung und eine Roadmap bis Jahresende.</p>
+      </div>
+      <div class="line">
+        <span class="who">Mateo</span>
+        <p class="de">Ich übernehme die Diagramme, markiere die Drop-off-Punkte und simuliere den Effekt des Energiesparmodus.</p>
+      </div>
+      <div class="line">
+        <span class="who">Jana</span>
+        <p class="de">Ich schreibe eine Kurzsequenz für den Kundendienst und lege die wichtigsten Fragen samt Antwortbausteinen bei.</p>
+      </div>
+      <div class="line">
+        <span class="who">Laura</span>
+        <p class="de">Super. Bitte schickt mir eure Stichpunkte bis Donnerstagmittag, damit ich sie in die Präsentation integriere.</p>
+      </div>
+      <div class="line">
+        <span class="who">Mateo</span>
+        <p class="de">Kommt. Ich sende heute Abend die ersten Charts aus dem Dashboard.</p>
+      </div>
+      <div class="line">
+        <span class="who">Jana</span>
+        <p class="de">Dann blocke ich mir morgen Vormittag für Feedback und finalisiere die Tonalität.</p>
+      </div>
+      <div class="line">
+        <span class="who">Laura</span>
+        <p class="de">Danke euch. Mit diesem klaren Plan wirkt unsere Roadmap vor dem Investor wesentlich belastbarer.</p>
       </div>
     </div>
-    <p class="footer-note">Vorbereitet am 29. September 2025 · Interne Abstimmung</p>
+    <p class="task">Mini-Aufgabe: Entwirf drei kurze Nutzenstatements (max. 40 Wörter), die jede Stufe des neuen Onboarding-Modells überzeugend erklären.</p>
+    <p class="footer-note">Vorbereitet am 29. September 2025 · Internes Abstimmungsmeeting</p>
   </section>
 
   <section class="page" aria-labelledby="page2-title">
-    <div>
-      <h1 id="page2-title">Обсуждение проекта в центре инноваций</h1>
-      <h2>Страница 2 · Полный перевод на русский язык</h2>
-      <div class="dialogue">
-        <p><strong>Лаура:</strong> Спасибо, что смогли собраться так срочно. Инвестор уже на следующей неделе хочет знать, как мы продлим пилотную фазу.</p>
-        <p><strong>Матео:</strong> Я проанализировал показатели за последние три месяца. Активное время на пользователя выросло, но у нас всё ещё слишком много отказов на этапе регистрации.</p>
-        <p><strong>Яна:</strong> Это совпадает с отзывами из клиентской службы. Многие не понимают, почему им сразу нужно открывать доступ к своим медицинским данным.</p>
-        <p><strong>Лаура:</strong> Мы можем сделать раскрытие данных необязательным, чтобы рекомендации не потеряли точность?</p>
-        <p><strong>Матео:</strong> Да, если предложим ступенчатое согласие. Мы объясним в трёх шагах, какие преимущества даёт каждое предоставление данных.</p>
-        <p><strong>Яна:</strong> Для этого мне нужны чёткие формулировки, юридически безупречные. Лаура, можешь согласовать это с нашим специалистом по защите данных?</p>
-        <p><strong>Лаура:</strong> Сделаю. К тому же инвестор хочет увидеть заметный прогресс в отчёте по устойчивости. На каком мы этапе?</p>
-        <p><strong>Матео:</strong> Баланс выбросов CO₂ по нашим серверам готов. Мы уже компенсируем шестьдесят процентов, но оставшиеся сертификаты дорогие.</p>
-        <p><strong>Яна:</strong> Возможно, мы можем ночью останавливать тестовые серверы. Это снизит потребление и покажет, что мы активно оптимизируем.</p>
-        <p><strong>Лаура:</strong> Отличная идея. Подготовьте к пятнице короткую презентацию: новые этапы регистрации, план коммуникации и один слайд по энергоменеджменту.</p>
-        <p><strong>Матео:</strong> Я возьму на себя показатели и сделаю скриншоты из аналитической панели.</p>
-        <p><strong>Яна:</strong> А я сформулирую клиентскую коммуникацию, включая раздел вопросов и ответов. Пришлёте мне свои тезисы до завтра?</p>
-        <p><strong>Лаура:</strong> Конечно. Если мы всё согласуем, дорожная карта будет выглядеть гораздо убедительнее.</p>
-        <p><strong>Матео:</strong> Тогда за дело. Я сегодня вечером пришлю первые диаграммы.</p>
-        <p><strong>Яна:</strong> Отлично, я забронирую для доработки четверг до обеда.</p>
-        <p><strong>Лаура:</strong> Прекрасно. Спасибо, мы на верном пути!</p>
+    <header class="head">
+      <h1 id="page2-title">Пилотная фаза и устойчивое развитие</h1>
+      <p class="sub">Страница 2 · Полный перевод на русский язык</p>
+      <div class="orn" aria-hidden="true"></div>
+    </header>
+    <p class="context">Место действия: переговорная комната в центре инноваций, поздний день.</p>
+    <p class="keywords">Онбординг · Отчёт по устойчивости · Согласие на данные · Энергоменеджмент</p>
+    <div class="dialogue">
+      <div class="line">
+        <span class="who">Лаура</span>
+        <p class="ru">Спасибо, что смогли собраться так срочно. Инвестор ждёт к понедельнику план, как продлить пилотную фазу и при этом убедительно показать наш экологичный подход.</p>
+      </div>
+      <div class="line">
+        <span class="who">Матео</span>
+        <p class="ru">Я сгруппировал пользовательские данные: активные минуты на человека растут, но онбординг теряет каждого третьего после второго запроса на передачу данных.</p>
+      </div>
+      <div class="line">
+        <span class="who">Яна</span>
+        <p class="ru">Служба поддержки слышит те же жалобы. Многие не понимают, зачем делиться информацией, и уходят до появления первых персонализированных советов.</p>
+      </div>
+      <div class="line">
+        <span class="who">Лаура</span>
+        <p class="ru">Сможем ли мы сделать поэтапное согласие? Хочу, чтобы пользователи решали шаг за шагом, какие медицинские данные открывать.</p>
+      </div>
+      <div class="line">
+        <span class="who">Матео</span>
+        <p class="ru">Да. Три уровня с понятными примерами: базовые сведения для общих рекомендаций, данные с датчиков движения для тренировочных планов и опциональный анализ сна для глубоких подсказок.</p>
+      </div>
+      <div class="line">
+        <span class="who">Яна</span>
+        <p class="ru">Тогда мне нужны точные формулировки и ссылка на аудит по защите данных, иначе не соберём целостный раздел FAQ.</p>
+      </div>
+      <div class="rule" aria-hidden="true"></div>
+      <div class="line">
+        <span class="who">Лаура</span>
+        <p class="ru">Завтра согласую юридические детали с нашим специалистом. Что мы покажем инвестору по устойчивому развитию?</p>
+      </div>
+      <div class="line">
+        <span class="who">Матео</span>
+        <p class="ru">Отчёт по выбросам CO₂ готов. Мы компенсируем шестьдесят процентов через локальные проекты. Остальные сертификаты слишком дорогие, но можно снизить ночную нагрузку серверов.</p>
+      </div>
+      <div class="line">
+        <span class="who">Яна</span>
+        <p class="ru">Если отключать тестовый кластер после полуночи, снизим расход энергии и покажем инициативу. Я позиционирую это как «Smart Energy Mode».</p>
+      </div>
+      <div class="line">
+        <span class="who">Лаура</span>
+        <p class="ru">Отлично. Подготовьте к пятнице наглядное обновление: ступенчатый онбординг, коммуникационный план, показатели экономии и дорожная карта до конца года.</p>
+      </div>
+      <div class="line">
+        <span class="who">Матео</span>
+        <p class="ru">Я соберу диаграммы, отмечу точки оттока и смоделирую эффект энергосберегающего режима.</p>
+      </div>
+      <div class="line">
+        <span class="who">Яна</span>
+        <p class="ru">Я напишу короткие заготовки для клиентской службы и приложу ключевые вопросы с ответами.</p>
+      </div>
+      <div class="line">
+        <span class="who">Лаура</span>
+        <p class="ru">Замечательно. Пришлите свои тезисы до четверга дня, чтобы я успела встроить их в презентацию.</p>
+      </div>
+      <div class="line">
+        <span class="who">Матео</span>
+        <p class="ru">Сегодня вечером отправлю первые графики из панели аналитики.</p>
+      </div>
+      <div class="line">
+        <span class="who">Яна</span>
+        <p class="ru">Тогда завтра утром выделю время на обратную связь и уточню тональность.</p>
+      </div>
+      <div class="line">
+        <span class="who">Лаура</span>
+        <p class="ru">Спасибо всем. С таким чётким планом наша дорожная карта будет выглядеть гораздо надёжнее для инвестора.</p>
       </div>
     </div>
-    <p class="footer-note">Перевод подготовлен 29 сентября 2025 · Внутреннее согласование</p>
+    <p class="footer-note">Перевод подготовлен 29 сентября 2025 · Внутренняя координация</p>
   </section>
 
   <script>
-    function openPrintDialog() {
-      window.print();
-    }
+    document.addEventListener('DOMContentLoaded', () => {
+      const printBtn = document.getElementById('print-btn');
+      const pdfBtn = document.getElementById('pdf-btn');
 
-    document.getElementById('print-btn').addEventListener('click', openPrintDialog);
-    document.getElementById('pdf-btn').addEventListener('click', openPrintDialog);
+      function handlePrint() {
+        window.print();
+      }
+
+      function handlePdf() {
+        const iframe = document.createElement('iframe');
+        iframe.style.position = 'fixed';
+        iframe.style.width = '0';
+        iframe.style.height = '0';
+        iframe.style.border = '0';
+        document.body.appendChild(iframe);
+
+        const doc = iframe.contentDocument || iframe.contentWindow.document;
+        const clone = document.documentElement.cloneNode(true);
+        const scripts = clone.querySelectorAll('script');
+        scripts.forEach((node) => node.parentNode.removeChild(node));
+        doc.replaceChildren(clone);
+        iframe.contentWindow.focus();
+        iframe.contentWindow.print();
+        setTimeout(() => iframe.remove(), 1000);
+      }
+
+      printBtn.addEventListener('click', handlePrint);
+      pdfBtn.addEventListener('click', handlePdf);
+    });
   </script>
 </body>
 </html>
