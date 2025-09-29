@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <title>Campuswohnheime &amp; Wege — Einseitige Szene (A4)</title>
+  <style>
+    :root {
+      --blue: #60a5fa;
+      --blue2: #3b82f6;
+      --gold: #c9a227;
+      --ink: #111111;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    @page {
+      size: A4;
+      margin: 12mm;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Georgia", "Times New Roman", serif;
+      font-size: 10.7pt;
+      line-height: 1.23;
+      background: #f4f7fb;
+      color: var(--ink);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      padding: 18px 0 36px;
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      width: 210mm;
+      padding: 8px 0;
+      background: transparent;
+      z-index: 5;
+    }
+
+    .toolbar button {
+      border: 1px solid var(--blue2);
+      background: var(--blue);
+      color: #fff;
+      font-size: 10.2pt;
+      padding: 6px 14px;
+      border-radius: 4px;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .toolbar button:hover,
+    .toolbar button:focus {
+      background: var(--blue2);
+      outline: none;
+      transform: translateY(-1px);
+    }
+
+    .page {
+      position: relative;
+      width: 210mm;
+      height: 297mm;
+      padding: 16mm 18mm 18mm;
+      background: #ffffff;
+      box-shadow: 0 4mm 12mm rgba(17, 17, 17, 0.18);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .head {
+      text-align: center;
+      margin-bottom: 10mm;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 18pt;
+      letter-spacing: 0.6px;
+    }
+
+    .sub {
+      margin-top: 4px;
+      font-size: 11.4pt;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--blue2);
+    }
+
+    .orn {
+      width: 38mm;
+      height: 2.2mm;
+      margin: 8px auto 0;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .context {
+      font-size: 10.4pt;
+      margin-bottom: 6mm;
+      color: rgba(17, 17, 17, 0.82);
+      text-align: center;
+    }
+
+    .keywords {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 4.5mm;
+      font-variant: small-caps;
+      letter-spacing: 0.6px;
+      color: var(--gold);
+    }
+
+    .rule {
+      width: 100%;
+      height: 0.4mm;
+      background: linear-gradient(90deg, transparent 0%, var(--blue2) 20%, var(--blue2) 80%, transparent 100%);
+      margin: 4.5mm 0;
+    }
+
+    .dialogue {
+      display: grid;
+      gap: 3.6mm;
+      flex: 1 1 auto;
+    }
+
+    .line {
+      display: grid;
+      grid-template-columns: 24mm 1fr;
+      column-gap: 4mm;
+      align-items: baseline;
+    }
+
+    .who {
+      font-variant: small-caps;
+      color: var(--blue2);
+      letter-spacing: 0.8px;
+    }
+
+    .de,
+    .ru {
+      margin: 0;
+      text-align: justify;
+      hyphens: auto;
+      overflow-wrap: anywhere;
+    }
+
+    .task {
+      margin-top: 6mm;
+      padding: 4mm;
+      border: 0.4mm solid var(--gold);
+      border-radius: 3mm;
+      background: rgba(201, 162, 39, 0.08);
+      font-style: italic;
+    }
+
+    .footer-note {
+      margin-top: 5mm;
+      text-align: right;
+      font-size: 9.8pt;
+      color: rgba(17, 17, 17, 0.68);
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+      }
+
+      .toolbar {
+        display: none;
+      }
+
+      .page {
+        margin: 0;
+        box-shadow: none;
+        page-break-after: always;
+      }
+
+      .page:last-of-type {
+        page-break-after: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <button type="button" id="print-btn">Drucken</button>
+    <button type="button" id="pdf-btn">Als PDF</button>
+  </div>
+
+  <section class="page" aria-labelledby="page1-title">
+    <header class="head">
+      <h1 id="page1-title">Campuswohnheime im Fokus</h1>
+      <div class="sub">Einseitige Szene (B2) · Wegzeiten, Verträge, Gemeinschaft</div>
+      <div class="orn" aria-hidden="true"></div>
+    </header>
+    <p class="context"><strong>Ort:</strong> Info-Abend im Studierendenzentrum. Stadtplan, Wohnheim-Modelle und ein großer Bildschirm mit Shuttle-Fahrplänen.</p>
+    <div class="keywords" aria-label="Schlüsselbegriffe">
+      <span>Wohnheim</span>
+      <span>Pendelzeit</span>
+      <span>Mietvertrag</span>
+      <span>Lernraum</span>
+    </div>
+    <div class="dialogue" aria-label="Dialog auf Deutsch">
+      <div class="line">
+        <span class="who">Julia</span>
+        <span class="de">Willkommen beim Wohnheim-Abend! Die Studentenwohnheime sind sehr nah beim Campus, maximal sieben Gehminuten bis zum Hauptgebäude, wenn ihr nicht am Bibliotheksufer trödelt.</span>
+      </div>
+      <div class="line">
+        <span class="who">Amir</span>
+        <span class="de">Das klingt perfekt. Ich komme aus Leipzig und möchte nicht sofort ein Fahrrad kaufen; gibt es nachts noch Shuttle-Busse, falls die Laborübung länger dauert?</span>
+      </div>
+      <div class="line">
+        <span class="who">Frau Keller</span>
+        <span class="de">Die Stadtwerke fahren Abendlinien bis halb zwei. Zusätzlich ist unser Leihfahrrad-System in eurer Servicegebühr enthalten, damit niemand auf den letzten Metern strandet.</span>
+      </div>
+      <div class="line">
+        <span class="who">Julia</span>
+        <span class="de">Außerdem teilen sich die Häuser Gemeinschaftsküchen und Lernlounges. Dort findet montags die Mentorenrunde statt, in der wir Stundenpläne checken und Fragen zum Prüfungsamt klären.</span>
+      </div>
+      <div class="line">
+        <span class="who">Amir</span>
+        <span class="de">Wie laut ist es in den Häusern? Ich lerne gern spät, aber Ruhe brauche ich trotzdem, vor allem vor den Matheklausuren.</span>
+      </div>
+      <div class="line">
+        <span class="who">Frau Keller</span>
+        <span class="de">Wir haben eine Hausordnung mit Ruhezeiten ab 22 Uhr. Bei Bedarf könnt ihr in den Lernraum im Souterrain ausweichen; er ist rund um die Uhr mit Karte zugänglich.</span>
+      </div>
+      <div class="line">
+        <span class="who">Julia</span>
+        <span class="de">Die Mietverträge laufen zunächst über zwölf Monate. Wer ins Ausland will, kann die Zimmer über unser Tauschportal untervermieten oder die Pause mit digitalem Arbeiten kombinieren.</span>
+      </div>
+      <div class="line">
+        <span class="who">Amir</span>
+        <span class="de">Welche Unterlagen müssen wir einreichen? Ich habe die Zulassung, aber mein Finanzierungsnachweis vom Stipendium kommt erst nächste Woche.</span>
+      </div>
+      <div class="line">
+        <span class="who">Frau Keller</span>
+        <span class="de">Kein Problem: Bringt Zulassung, Ausweis, Immatrikulationsbescheinigung und den Nachweis zur Haftpflichtversicherung. Für die Miete reicht eine Selbstverpflichtung, den Rest reicht ihr nach.</span>
+      </div>
+      <div class="line">
+        <span class="who">Julia</span>
+        <span class="de">Merkt euch auch die Freizeitangebote: Kinoabende, Sprach-Tandems und ein Repair-Café im Hof. Dort trefft ihr Studierende aus Architektur, Informatik und Sozialwesen.</span>
+      </div>
+      <div class="line">
+        <span class="who">Amir</span>
+        <span class="de">Das klingt nach einer guten Mischung. Ich hätte gern eine Zimmerführung, um zu sehen, wie viel Platz für meine Keyboard-Ecke bleibt.</span>
+      </div>
+      <div class="line">
+        <span class="who">Frau Keller</span>
+        <span class="de">Nach dem Info-Block machen wir Gruppenrundgänge. Notiert euch Fragen zu WLAN, Fahrradboxen oder Gäste-Regeln, damit wir sie direkt im Gebäude beantworten.</span>
+      </div>
+      <div class="line task" role="note">
+        <span class="who">Mini-Aufgabe</span>
+        <span class="de">Skizziere in drei Sätzen deinen idealen Wohnheimplan: Lage, Lernritual, Gemeinschaftsbeitrag. Tausche dich danach mit einer Person neben dir über eure wichtigsten Prioritäten aus.</span>
+      </div>
+    </div>
+    <p class="footer-note">Notiert am 4. März 2026 · Info-Abend Campuswohnheime</p>
+  </section>
+
+  <section class="page" aria-labelledby="page2-title">
+    <header class="head">
+      <h1 id="page2-title">Студенческие общежития под рукой</h1>
+      <div class="sub">Одностраничная сцена (B2) · Дорога, договоры, сообщество</div>
+      <div class="orn" aria-hidden="true"></div>
+    </header>
+    <p class="context"><strong>Место:</strong> вечер информации в студенческом центре. Городской план, макеты общежитий и большой экран с расписанием шаттлов.</p>
+    <div class="keywords" aria-label="Ключевые слова">
+      <span>Общежитие</span>
+      <span>Дорога</span>
+      <span>Договор аренды</span>
+      <span>Учебное пространство</span>
+    </div>
+    <div class="dialogue" aria-label="Диалог на русском языке">
+      <div class="line">
+        <span class="who">Юлия</span>
+        <span class="ru">Добро пожаловать на вечер общежитий! Студенческие общежития находятся совсем рядом с кампусом: максимум семь минут пешком до главного корпуса, если только не задерживаться у библиотечного берега.</span>
+      </div>
+      <div class="line">
+        <span class="who">Амир</span>
+        <span class="ru">Звучит идеально. Я приехал из Лейпцига и не хочу сразу покупать велосипед; ночью ещё ходят шаттлы, если лабораторное занятие задержится?</span>
+      </div>
+      <div class="line">
+        <span class="who">Фрау Келлер</span>
+        <span class="ru">Городские линии ходят до половины второго. Кроме того, система прокатных велосипедов входит в ваш сервисный сбор, так что никто не застрянет на последних метрах.</span>
+      </div>
+      <div class="line">
+        <span class="who">Юлия</span>
+        <span class="ru">Дома делят между собой общие кухни и учебные лаунжи. По понедельникам там проходит встреча наставников: сверяем расписания и решаем вопросы с экзаменационным бюро.</span>
+      </div>
+      <div class="line">
+        <span class="who">Амир</span>
+        <span class="ru">Насколько шумно в домах? Я люблю учиться поздно, но тишина нужна, особенно перед экзаменами по математике.</span>
+      </div>
+      <div class="line">
+        <span class="who">Фрау Келлер</span>
+        <span class="ru">У нас есть правила дома: режим тишины с 22:00. При необходимости можно уйти в учебную комнату в цоколе; доступ туда по карте круглые сутки.</span>
+      </div>
+      <div class="line">
+        <span class="who">Юлия</span>
+        <span class="ru">Договор аренды сначала заключается на двенадцать месяцев. Кто хочет уехать за границу, может сдать комнату через наш портал обменов или совмещать паузу с удалённой работой.</span>
+      </div>
+      <div class="line">
+        <span class="who">Амир</span>
+        <span class="ru">Какие документы надо подать? Письмо о зачислении у меня есть, но подтверждение финансирования от стипендии придёт только на следующей неделе.</span>
+      </div>
+      <div class="line">
+        <span class="who">Фрау Келлер</span>
+        <span class="ru">Не проблема: приносите зачисление, удостоверение личности, справку об имматрикуляции и подтверждение страховки ответственности. Для аренды хватит письменного обязательства, остальное донесёте позже.</span>
+      </div>
+      <div class="line">
+        <span class="who">Юлия</span>
+        <span class="ru">Запомните и досуг: кино-вечера, языковые тандемы и ремонтное кафе во дворе. Там встречаются студенты архитектуры, информатики и социальной работы.</span>
+      </div>
+      <div class="line">
+        <span class="who">Амир</span>
+        <span class="ru">Звучит как хорошее сочетание. Мне бы хотелось посмотреть комнату, чтобы понять, хватит ли места для моего уголка с синтезатором.</span>
+      </div>
+      <div class="line">
+        <span class="who">Фрау Келлер</span>
+        <span class="ru">После информационного блока будут групповые экскурсии. Запишите вопросы про Wi-Fi, велобоксы или правила для гостей, чтобы мы ответили прямо в здании.</span>
+      </div>
+      <div class="line task" role="note">
+        <span class="who">Мини-задание</span>
+        <span class="ru">Набросайте в трёх предложениях свой идеальный план проживания: расположение, учебный ритуал, вклад в сообщество. Затем обсудите с соседом ваши главные приоритеты.</span>
+      </div>
+    </div>
+    <p class="footer-note">Записано 4 марта 2026 года · Вечер кампусных общежитий</p>
+  </section>
+
+  <iframe id="pdf-frame" title="PDF Fallback" style="display: none;" aria-hidden="true"></iframe>
+  <script>
+    const printBtn = document.getElementById("print-btn");
+    const pdfBtn = document.getElementById("pdf-btn");
+    const pdfFrame = document.getElementById("pdf-frame");
+
+    printBtn.addEventListener("click", () => {
+      window.print();
+    });
+
+    pdfBtn.addEventListener("click", () => {
+      const clone = document.documentElement.cloneNode(true);
+      clone.querySelectorAll("script").forEach((node) => node.remove());
+      const blob = new Blob(["<!DOCTYPE html>" + clone.outerHTML], {
+        type: "text/html"
+      });
+      const url = URL.createObjectURL(blob);
+      pdfFrame.src = url;
+      pdfFrame.onload = () => {
+        try {
+          pdfFrame.contentWindow.focus();
+          pdfFrame.contentWindow.print();
+        } catch (error) {
+          window.print();
+        }
+      };
+    });
+  </script>
+</body>
+</html>
