@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <title>Berufsschule Gastronomie – Einseitige Szene (A4)</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --blue: #60a5fa;
+      --blue2: #3b82f6;
+      --gold: #c9a227;
+      --ink: #111111;
+    }
+
+    @page {
+      size: A4;
+      margin: 12mm;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Georgia", "Times New Roman", serif;
+      background: #eef3fb;
+      color: var(--ink);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .toolbar {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      width: 100%;
+      max-width: 210mm;
+    }
+
+    button {
+      border: 1px solid var(--blue2);
+      background: white;
+      color: var(--blue2);
+      padding: 8px 18px;
+      font-size: 11pt;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    button:hover,
+    button:focus {
+      background: var(--blue2);
+      color: white;
+      outline: none;
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      background: white;
+      box-shadow: 0 3mm 8mm rgba(59, 130, 246, 0.18);
+      padding: 18mm 20mm 18mm 22mm;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      overflow: hidden;
+    }
+
+    header {
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 22pt;
+      letter-spacing: 0.6px;
+      color: var(--blue2);
+    }
+
+    .sub {
+      margin-top: 4px;
+      font-size: 11.2pt;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #34588f;
+    }
+
+    .orn {
+      height: 4px;
+      width: 110px;
+      margin: 10px auto 0;
+      background: linear-gradient(90deg, var(--gold), rgba(201, 162, 39, 0));
+      border-radius: 2px;
+    }
+
+    .context {
+      font-style: italic;
+      font-size: 10.6pt;
+      text-align: center;
+      color: #364d6b;
+    }
+
+    .keywords {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      font-size: 10.4pt;
+      color: #2f3d57;
+    }
+
+    .keywords span {
+      background: rgba(96, 165, 250, 0.18);
+      padding: 3px 8px;
+      border-radius: 999px;
+    }
+
+    .dialogue {
+      display: grid;
+      gap: 8px;
+      font-size: 10.6pt;
+      line-height: 1.23;
+      hyphens: auto;
+      overflow-wrap: anywhere;
+    }
+
+    .line {
+      display: grid;
+      grid-template-columns: 105px 1fr;
+      gap: 10px;
+      align-items: baseline;
+    }
+
+    .who {
+      font-variant: small-caps;
+      color: var(--blue2);
+      letter-spacing: 0.4px;
+    }
+
+    .de,
+    .ru {
+      text-align: justify;
+    }
+
+    .rule {
+      height: 1px;
+      background: rgba(17, 17, 17, 0.14);
+      margin: 6px 0 2px;
+    }
+
+    .task {
+      margin-top: auto;
+      padding-top: 8px;
+      border-top: 1px dashed rgba(201, 162, 39, 0.6);
+      font-size: 10.4pt;
+      color: #2f3d57;
+    }
+
+    .footnote {
+      font-size: 10pt;
+      color: #5a6c8a;
+      text-align: right;
+    }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+
+      .toolbar {
+        display: none;
+      }
+
+      .page {
+        box-shadow: none;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar" aria-label="Werkzeuge">
+    <button type="button" id="print-btn">Drucken</button>
+    <button type="button" id="pdf-btn">Als PDF</button>
+  </div>
+
+  <section class="page" aria-labelledby="page-de-title">
+    <header>
+      <h1 id="page-de-title">Berufsschultag im Ausbildungscampus</h1>
+      <p class="sub">Seite 1 · Deutscher Dialog</p>
+      <div class="orn" aria-hidden="true"></div>
+    </header>
+    <p class="context">Lehrküche der Gewerblichen Berufsschule Augsburg, später Vormittag während einer Projektbesprechung.</p>
+    <p class="keywords" aria-label="Schlüsselwörter">
+      <span>Ausbildungsplan</span>
+      <span>Praxisstation</span>
+      <span>Gästebetreuung</span>
+      <span>Meisterprüfung</span>
+    </p>
+    <div class="dialogue">
+      <div class="line">
+        <span class="who">Herr König</span>
+        <p class="de">Schön, dass alle da sind. Wir müssen heute klären, wie wir die Servicepraxis mit der neuen Lehrküche verzahnen.</p>
+      </div>
+      <div class="line">
+        <span class="who">Maya</span>
+        <p class="de">Im Restaurantpraktikum fehlt uns noch eine Station für vegetarische Menüs. Viele Gäste fragen danach.</p>
+      </div>
+      <div class="line">
+        <span class="who">Leon</span>
+        <p class="de">Ich könnte mit meiner Gruppe einen Wochenplan schreiben, der saisonale Produkte einbindet. Dann wissen alle, was eingekauft werden muss.</p>
+      </div>
+      <div class="line">
+        <span class="who">Herr König</span>
+        <p class="de">Gute Idee. Bitte achtet darauf, dass die Lagerhaltung mitdenkt, was die Bäckerei-Abteilung liefert.</p>
+      </div>
+      <div class="rule" role="separator"></div>
+      <div class="line">
+        <span class="who">Sabine</span>
+        <p class="de">Im Gästebereich üben wir gerade das Beschwerdemanagement. Können wir die echten Rückmeldungen aus dem Schulrestaurant auswerten?</p>
+      </div>
+      <div class="line">
+        <span class="who">Herr König</span>
+        <p class="de">Ja, ich lasse euch die Protokolle aus den letzten zwei Wochen kopieren. Achtet besonders auf den Tonfall, nicht nur auf die Inhalte.</p>
+      </div>
+      <div class="line">
+        <span class="who">Maya</span>
+        <p class="de">Dann könnten wir auch eine kleine Feedbackkarte gestalten, damit wir standardisierte Fragen haben.</p>
+      </div>
+      <div class="line">
+        <span class="who">Leon</span>
+        <p class="de">Und wir spielen das Szenario durch, dass eine Allergikerin spontan auftaucht. So trainieren wir die Kommunikation zwischen Küche und Service.</p>
+      </div>
+      <div class="rule" role="separator"></div>
+      <div class="line">
+        <span class="who">Sabine</span>
+        <p class="de">Wie verbinden wir das Ganze mit der Vorbereitung auf die Meisterprüfung? Ich habe Respekt vor der Kalkulation.</p>
+      </div>
+      <div class="line">
+        <span class="who">Herr König</span>
+        <p class="de">Wir richten nächste Woche eine Praxisstation ein, in der ihr die Wareneinsätze kalkuliert und digitale Tools vergleicht.</p>
+      </div>
+      <div class="line">
+        <span class="who">Maya</span>
+        <p class="de">Super, dann bringe ich meine Tabellen aus dem Betrieb mit. Die zeigen, wie viel Spielraum wir bei den Getränken haben.</p>
+      </div>
+      <div class="line">
+        <span class="who">Leon</span>
+        <p class="de">Ich frage in meinem Ausbildungsbetrieb nach, ob wir die aktuelle Inventurliste als Beispiel bekommen dürfen.</p>
+      </div>
+      <div class="line">
+        <span class="who">Herr König</span>
+        <p class="de">Sehr gut. Wenn ihr eure Erkenntnisse zusammentragt, können wir das Konzept nächste Woche im Schulleitungsteam präsentieren.</p>
+      </div>
+    </div>
+    <p class="task"><strong>Mini-Aufgabe:</strong> Notiere zwei Formulierungen für einen höflichen Umgang mit Reklamationen und übersetze sie ins Englische.</p>
+    <p class="footnote">Protokolliert am 12. März · Ausbildungsjahr Gastronomie (3. Lehrjahr)</p>
+  </section>
+
+  <section class="page" aria-labelledby="page-ru-title">
+    <header>
+      <h1 id="page-ru-title">День в профессиональном училище гастрономии</h1>
+      <p class="sub">Страница 2 · Полный перевод на русский язык</p>
+      <div class="orn" aria-hidden="true"></div>
+    </header>
+    <p class="context">Учебная кухня профессионального училища Аугсбурга, позднее утро, обсуждение проекта.</p>
+    <p class="keywords" aria-label="Ключевые термины">
+      <span>Учебный план</span>
+      <span>Практическая станция</span>
+      <span>Обслуживание гостей</span>
+      <span>Мастерский экзамен</span>
+    </p>
+    <div class="dialogue">
+      <div class="line">
+        <span class="who">Господин Кёниг</span>
+        <p class="ru">Рад, что все пришли. Сегодня нам нужно решить, как связать практику обслуживания с новой учебной кухней.</p>
+      </div>
+      <div class="line">
+        <span class="who">Майя</span>
+        <p class="ru">Во время практики в ресторане нам всё ещё не хватает станции для вегетарианских меню. Многие гости об этом просят.</p>
+      </div>
+      <div class="line">
+        <span class="who">Леон</span>
+        <p class="ru">Я мог бы со своей группой составить недельный план с сезонными продуктами. Тогда всем будет ясно, что нужно закупать.</p>
+      </div>
+      <div class="line">
+        <span class="who">Господин Кёниг</span>
+        <p class="ru">Хорошая мысль. Пожалуйста, учитывайте складской учёт и поставки из пекарского отделения.</p>
+      </div>
+      <div class="rule" role="separator"></div>
+      <div class="line">
+        <span class="who">Сабине</span>
+        <p class="ru">На занятиях с гостями мы как раз отрабатываем работу с жалобами. Можно ли разобрать реальные отзывы из школьного ресторана?</p>
+      </div>
+      <div class="line">
+        <span class="who">Господин Кёниг</span>
+        <p class="ru">Да, я дам вам копии протоколов за последние две недели. Обращайте внимание прежде всего на тон, а не только на содержание.</p>
+      </div>
+      <div class="line">
+        <span class="who">Майя</span>
+        <p class="ru">Тогда мы могли бы сделать небольшую карточку обратной связи, чтобы задавать стандартные вопросы.</p>
+      </div>
+      <div class="line">
+        <span class="who">Леон</span>
+        <p class="ru">И разыграем ситуацию, когда внезапно приходит гость с аллергией. Так потренируем взаимодействие кухни и сервиса.</p>
+      </div>
+      <div class="rule" role="separator"></div>
+      <div class="line">
+        <span class="who">Сабине</span>
+        <p class="ru">Как связать всё это с подготовкой к мастерскому экзамену? Я опасаюсь расчётов.</p>
+      </div>
+      <div class="line">
+        <span class="who">Господин Кёниг</span>
+        <p class="ru">На следующей неделе откроем практическую станцию, где вы будете считать затраты на продукты и сравнивать цифровые инструменты.</p>
+      </div>
+      <div class="line">
+        <span class="who">Майя</span>
+        <p class="ru">Отлично, тогда я принесу таблицы из своего предприятия. Там видно, какой запас у нас по напиткам.</p>
+      </div>
+      <div class="line">
+        <span class="who">Леон</span>
+        <p class="ru">Я спрошу на своей практике, можно ли взять актуальный инвентаризационный список в качестве примера.</p>
+      </div>
+      <div class="line">
+        <span class="who">Господин Кёниг</span>
+        <p class="ru">Прекрасно. Когда соберёте выводы, представим концепцию на следующей неделе руководству школы.</p>
+      </div>
+    </div>
+    <p class="footnote">Перевод составлен 12 марта · Учебный курс гастрономии (3-й год)</p>
+  </section>
+
+  <script>
+    function handlePrint() {
+      window.print();
+    }
+
+    function handlePdf() {
+      const docClone = document.documentElement.cloneNode(true);
+      docClone.querySelectorAll('script').forEach((node) => node.remove());
+      const blob = new Blob(['<!DOCTYPE html>' + docClone.outerHTML], { type: 'text/html' });
+      const url = URL.createObjectURL(blob);
+      let iframe = document.getElementById('pdf-frame');
+      if (!iframe) {
+        iframe = document.createElement('iframe');
+        iframe.style.position = 'fixed';
+        iframe.style.right = '0';
+        iframe.style.bottom = '0';
+        iframe.style.width = '0';
+        iframe.style.height = '0';
+        iframe.style.border = '0';
+        iframe.id = 'pdf-frame';
+        document.body.appendChild(iframe);
+      }
+      iframe.src = url;
+      iframe.onload = () => {
+        iframe.contentWindow?.focus();
+        iframe.contentWindow?.print();
+        setTimeout(() => {
+          URL.revokeObjectURL(url);
+        }, 1000);
+      };
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('print-btn').addEventListener('click', handlePrint);
+      document.getElementById('pdf-btn').addEventListener('click', handlePdf);
+    });
+  </script>
+</body>
+</html>
